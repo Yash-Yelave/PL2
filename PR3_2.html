@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Registration Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            background-color: #2c3e50;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #3498db;
+        }
+
+        /* Form Styles */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .form-container {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        input[type="tel"]:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .radio-group label {
+            font-weight: normal;
+            margin-bottom: 0;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        button {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"] {
+            background-color: #3498db;
+            color: white;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        button[type="reset"] {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        button[type="reset"]:hover {
+            background-color: #c0392b;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #34495e;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #3498db;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-container">
+            <h1>Registration Form</h1>
+            <form id="registrationForm" onsubmit="return validateForm()">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <span id="nameError" class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <span id="emailError" class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <span id="passwordError" class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile">Mobile:</label>
+                    <input type="tel" id="mobile" name="mobile" required>
+                    <span id="mobileError" class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Gender:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </div>
+                    <span id="genderError" class="error-message"></span>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            let isValid = true;
+            
+            // Reset all error messages
+            document.querySelectorAll('.error-message').forEach(span => span.textContent = '');
+
+            // Name validation
+            const name = document.getElementById('name').value;
+            if (name.length < 3) {
+                document.getElementById('nameError').textContent = 'Name must be at least 3 characters';
+                isValid = false;
+            }
+
+            // Email validation
+            const email = document.getElementById('email').value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email';
+                isValid = false;
+            }
+
+            // Password validation
+            const password = document.getElementById('password').value;
+            if (password.length < 6) {
+                document.getElementById('passwordError').textContent = 'Password must be at least 6 characters';
+                isValid = false;
+            }
+
+            // Mobile validation
+            const mobile = document.getElementById('mobile').value;
+            const mobileRegex = /^\d{10}$/;
+            if (!mobileRegex.test(mobile)) {
+                document.getElementById('mobileError').textContent = 'Please enter a valid 10-digit mobile number';
+                isValid = false;
+            }
+
+            // Gender validation
+            const gender = document.querySelector('input[name="gender"]:checked');
+            if (!gender) {
+                document.getElementById('genderError').textContent = 'Please select a gender';
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert('Form submitted successfully!');
+                return true;
+            }
+            return false;
+        }
+
+        // Real-time email validation
+        document.getElementById('email').addEventListener('input', function() {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(this.value)) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email';
+            } else {
+                document.getElementById('emailError').textContent = '';
+            }
+        });
+    </script>
+</body>
+</html> 

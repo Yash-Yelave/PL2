@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tutorial - CodeLearn</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>CodeLearn</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../tutorials.html">Tutorials</a></li>
+                <li><a href="../references.html">References</a></li>
+                <!-- <li><a href="../exercises.html">Exercises</a></li> -->
+            </ul>
+            <!-- <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <button><i class="fas fa-search"></i></button>
+            </div> -->
+        </nav>
+    </header>
+
+    <main class="tutorial-content">
+        <aside class="tutorial-sidebar">
+            <h3>JavaScript Tutorial</h3>
+            <ul class="tutorial-menu">
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#syntax">JavaScript Syntax</a></li>
+                <li><a href="#variables">Variables</a></li>
+                <li><a href="#operators">Operators</a></li>
+                <li><a href="#functions">Functions</a></li>
+                <li><a href="#objects">Objects</a></li>
+                <li><a href="#arrays">Arrays</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#dom">DOM Manipulation</a></li>
+                <li><a href="#async">Async JavaScript</a></li>
+            </ul>
+        </aside>
+
+        <article class="tutorial-main">
+            <section id="introduction">
+                <h2>JavaScript Introduction</h2>
+                <p>JavaScript is a programming language that adds interactivity to your website. It is one of the three core technologies of web development, alongside HTML and CSS.</p>
+                <div class="code-example">
+                    <h3>Example:</h3>
+                    <pre><code>// Simple JavaScript example
+function greet(name) {
+    return "Hello, " + name + "!";
+}
+
+console.log(greet("World")); // Output: Hello, World!</code></pre>
+                </div>
+            </section>
+
+            <section id="syntax">
+                <h2>JavaScript Syntax</h2>
+                <p>JavaScript syntax is the set of rules that define a correctly structured JavaScript program. It includes statements, variables, functions, and more.</p>
+                <div class="code-example">
+                    <h3>Example:</h3>
+                    <pre><code>// Variable declaration
+let message = "Hello";
+
+// Function definition
+function showMessage() {
+    alert(message);
+}
+
+// Function call
+showMessage();</code></pre>
+                </div>
+            </section>
+
+            <section id="variables">
+                <h2>JavaScript Variables</h2>
+                <p>Variables are containers for storing data values. In JavaScript, you can declare variables using var, let, or const.</p>
+                <div class="code-example">
+                    <h3>Example:</h3>
+                    <pre><code>// Using let
+let name = "John";
+name = "Jane"; // Can be reassigned
+
+// Using const
+const PI = 3.14;
+// PI = 3.14159; // Error: Cannot reassign const
+
+// Using var (older way)
+var age = 25;</code></pre>
+                </div>
+            </section>
+
+            <div class="tutorial-navigation">
+                <a href="css.html" class="btn primary">Previous</a>
+                <a href="python.html" class="btn primary">Next</a>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About CodeLearn</h4>
+                <p>Your comprehensive platform for learning programming languages and web development.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../tutorials.html">Tutorials</a></li>
+                    <li><a href="../references.html">References</a></li>
+                    <li><a href="../exercises.html">Exercises</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 CodeLearn. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html> 

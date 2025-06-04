@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Tutorial - CodeLearn</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>CodeLearn</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../tutorials.html">Tutorials</a></li>
+                <li><a href="../references.html">References</a></li>
+                <!-- <li><a href="../exercises.html">Exercises</a></li> -->
+            </ul>
+            <!-- <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <button><i class="fas fa-search"></i></button>
+            </div> -->
+        </nav>
+    </header>
+
+    <main class="tutorial-content">
+        <aside class="tutorial-sidebar">
+            <h3>CSS Tutorial</h3>
+            <ul class="tutorial-menu">
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#syntax">CSS Syntax</a></li>
+                <li><a href="#selectors">CSS Selectors</a></li>
+                <li><a href="#colors">CSS Colors</a></li>
+                <li><a href="#backgrounds">CSS Backgrounds</a></li>
+                <li><a href="#borders">CSS Borders</a></li>
+                <li><a href="#margins">CSS Margins</a></li>
+                <li><a href="#padding">CSS Padding</a></li>
+                <li><a href="#boxmodel">CSS Box Model</a></li>
+                <li><a href="#flexbox">CSS Flexbox</a></li>
+                <li><a href="#grid">CSS Grid</a></li>
+            </ul>
+        </aside>
+
+        <article class="tutorial-main">
+            <section id="introduction">
+                <h2>CSS Introduction</h2>
+                <p>CSS (Cascading Style Sheets) is a style sheet language used for describing the presentation of a document written in HTML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.</p>
+                <div class="code-example">
+                    <h3>Example:</h3>
+                    <pre><code>body {
+    background-color: lightblue;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+p {
+    font-family: verdana;
+    font-size: 20px;
+}</code></pre>
+                </div>
+            </section>
+
+            <section id="syntax">
+                <h2>CSS Syntax</h2>
+                <p>A CSS rule consists of a selector and a declaration block. The selector points to the HTML element you want to style, and the declaration block contains one or more declarations separated by semicolons.</p>
+                <div class="code-example">
+                    <h3>Example:</h3>
+                    <pre><code>selector {
+    property: value;
+    property: value;
+}</code></pre>
+                </div>
+            </section>
+
+            <section id="selectors">
+                <h2>CSS Selectors</h2>
+                <p>CSS selectors are used to select the HTML elements you want to style. There are several types of selectors including element, class, and ID selectors.</p>
+                <div class="code-example">
+                    <h3>Example:</h3>
+                    <pre><code>/* Element selector */
+p {
+    color: red;
+}
+
+/* Class selector */
+.intro {
+    font-weight: bold;
+}
+
+/* ID selector */
+#header {
+    background-color: blue;
+}</code></pre>
+                </div>
+            </section>
+
+            <div class="tutorial-navigation">
+                <a href="html.html" class="btn primary">Previous</a>
+                <a href="javascript.html" class="btn primary">Next</a>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About CodeLearn</h4>
+                <p>Your comprehensive platform for learning programming languages and web development.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../tutorials.html">Tutorials</a></li>
+                    <li><a href="../references.html">References</a></li>
+                    <li><a href="../exercises.html">Exercises</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 CodeLearn. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html> 
